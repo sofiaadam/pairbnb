@@ -1,0 +1,27 @@
+<div class="text-field">
+    <%= form.label :Fullname %>
+    <%= form.text_field :full_name, type: 'full_name'%>
+
+<div class="text-field">
+  <%= form.label :email %>
+  <%= form.text_field :email, type: 'email' %>
+</div>
+
+<div class="password-field">
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+</div>
+
+<div class="integer-field">
+    <%= form.label :age %>
+    <%= form.text_field :age, type: 'age'%>
+    </div>
+
+<div class="gender-field">
+    <%= form.radio_button(:gender, "undefined") %>
+    <%= label_tag(:gender, "undefined") %>
+    <%= form.radio_button(:gender, "male") %>
+    <%= label_tag(:gender, "male") %>
+    <%= form.radio_button(:gender, "female") %>
+    <%= label_tag(:gender, "female") %>
+</div>
