@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
     def index
-        flash[:success]
+        flash[:notice]
     end
     
 

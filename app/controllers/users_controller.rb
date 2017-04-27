@@ -17,8 +17,10 @@ class UsersController < Clearance::UsersController
 	      # respond_to do |format|
 	      # 	format.js
 	      # 	format.html
-        end
+        # end
     end
+  end
+  
   
 
   

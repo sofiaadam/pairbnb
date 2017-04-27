@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   include Clearance::User
   has_many :authentications, :dependent => :destroy
+  has_many :listings
   
   enum gender: [:undefined, :male, :female]
 
