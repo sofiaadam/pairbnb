@@ -1,6 +1,9 @@
 <button type="button" class="btn btn-default">
 <%= link_to "Back to all listings", listings_path %>
 </button>
+
+
+
 <h1>Show specific listing</h1>
 <button type="button" class="btn btn-default">
 <%= link_to "Edit Listing", edit_listing_path%>
@@ -8,3 +11,4 @@
 
 <button type="button" class="btn btn-default">
 <%= link_to "Delete Listing", listings_path(@listing), :confirm => "Are you sure?", :method => :destroy %>
+
