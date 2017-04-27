@@ -26,6 +26,19 @@ class ListingsController < ApplicationController
     
     def edit
     end
+
+    def update
+        @listing.update(listing_params)
+        @listing.user_id = current_user.id
+        redirect_to @listing
+    end
+
+    def destroy #not working???
+        @listing.destroy
+        redirect_to root_path
+    end
+    
+
     
 
     private
