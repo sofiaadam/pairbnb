@@ -1,21 +1,12 @@
-
-
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
-
-  <%= render partial: '/sessions/form' %>
-
-</div>
-
-
 class CreateListings < ActiveRecord::Migration[5.0]
   def change
-    create_table :listings do |t|
+   create_table :listings do |t|
       t.string :home_type
       t.string :listing_type
-      t.integer :accommodate
+      t.integer :guest
       t.integer :bedroom
       t.integer :bathroom
+      t.integer :price
       t.text :summary
       t.string :address
       t.references :user
@@ -25,3 +16,7 @@ class CreateListings < ActiveRecord::Migration[5.0]
   end
 end
 
+      t.timestamps
+    end
+  end
+end
