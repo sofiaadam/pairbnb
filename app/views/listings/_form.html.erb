@@ -1,0 +1,62 @@
+
+<button type="button" class="btn btn-default">
+<%= link_to "Back to all listings", listings_path %>
+</button>
+<button type="button" class="btn btn-default">
+<%= link_to "Homepage", root_path %>
+</button>
+
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4 well text-center">
+<h1 class = "title"> Create New Listing </h1>
+
+     <div class="title-field">
+      <%= form.label :title %>
+      <%= form.text_field :title, type: 'Title' %></p></div><br>
+
+      <div class="description-field">
+      <%= form.label :description %>
+      <%= form.text_field :description, type: 'Description' %></div><br>  
+
+     <div class="guest-field">
+      <%= form.label :guest %>
+      <%= form.number_field :guest, type: 'Accomodates' %>
+      </div><br>
+
+      <div class=>
+      <%= form.label :bedroom %>
+      <%= form.number_field :bedroom, type: 'Bedrooms' %>  
+      </div><br>
+    
+
+      <div class="bathroom-field">
+      <%= form.label :bathroom %>
+      <%= form.number_field :bathroom, type: 'Bathrooms' %>
+      </div>
+
+      <div class="price-field">
+      <%= form.label :price %>
+      <%= form.number_field :price, type: 'Price' %>
+      </div>
+
+      <div class="address-field">
+      <%= form.label :address %>
+      <%= form.text_field :address, type: 'Address' %>
+      </div>
+
+       <div class="property-field"> 
+     Property Type: <%= select_tag 'listing[property_type]', options_for_select([["house", :house], ["apartment", :apartment]]) %>
+     </div><br>
+
+     <div class="room-field">
+     Room Type: <%= select_tag 'listing[room_type]', options_for_select([["shared_room", :shared_room], ["private_room", :private_room], ["entire_place", :entire_place]]) %>
+     </div><br>
+
+
+      <%= form.submit %>
+  </div>
+  
+  
+
+  
