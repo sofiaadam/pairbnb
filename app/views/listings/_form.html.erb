@@ -45,6 +45,7 @@
       <%= form.text_field :address, type: 'Address' %>
       </div>
 
+
        <div class="property-field"> 
      Property Type: <%= select_tag 'listing[property_type]', options_for_select([["house", :house], ["apartment", :apartment]]) %>
      </div><br>
@@ -53,8 +54,10 @@
      Room Type: <%= select_tag 'listing[room_type]', options_for_select([["shared_room", :shared_room], ["private_room", :private_room], ["entire_place", :entire_place]]) %>
      </div><br>
 
+     <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :desc_tag %>
 
       <%= form.submit %>
+<div class="col-sm-4"></div>
   </div>
   
   

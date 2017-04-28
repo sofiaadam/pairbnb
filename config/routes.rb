@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :listings
+  resources :tags
   
   root 'homes#index'
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
