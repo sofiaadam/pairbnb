@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
     def index
         @listing = Listing.all
         # @tag = Tag.new
+        # @searchlistings = Listing.all.paginate(page: params[:page], per_page: 10)
     end
 
     #render listing form
