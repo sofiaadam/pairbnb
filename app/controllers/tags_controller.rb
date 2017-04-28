@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :find_tag, only: [:destroy, :show]
+  
   def index
     @show_tag = Tag.all
   end

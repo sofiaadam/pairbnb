@@ -1,0 +1,8 @@
+<h1>show all listing that have this tag</h1>
+<%=link_to "All Tags", tags_path%><br>
+
+<%@tag_list.each do |l|%>
+
+<%=link_to "#{l.title}",listing_path(l.id)%><br>
+
+<%end%>
