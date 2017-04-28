@@ -4,17 +4,22 @@ class ListingsController < ApplicationController
 
     def index
         @listing = Listing.all
+        # @tag = Tag.new
     end
 
     #render listing form
     def new
         @listing = Listing.new
+        # @new_tags = @listing.tags.new
     end
 
     def create
+        
         @listing = Listing.new(listing_params)
         @listing.user_id = current_user.id
         if @listing.save
+            # @new_tags = params[:listing][:tag][:tag].downcase.split(",") 
+            # #think of what to do after this.
             redirect_to @listing
         else
             render 'new'
@@ -33,7 +38,7 @@ class ListingsController < ApplicationController
         redirect_to @listing
     end
 
-    def destroy #not working???
+    def destroy 
         @listing.destroy
         redirect_to root_path
     end
@@ -43,19 +48,16 @@ class ListingsController < ApplicationController
 
     private
     def listing_params
-        params.require(:listing).permit(:title, :description, :property_type, :room_type, :guest, :bedroom, :bathroom, :price, :address)
+        params.require(:listing).permit(:title, :description, :property_type, :room_type, :guest, :bedroom, :bathroom, :price, :address, {:tag_ids => [] })
     end
 
     def find_listing
         @listing = Listing.find(params[:id])
     end
     
-
-
-    
-    
 end
 
 
 
-  
+
+ 

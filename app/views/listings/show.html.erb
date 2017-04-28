@@ -2,7 +2,22 @@
 <%= link_to "Back to all listings", listings_path %>
 </button>
 
+<h1><%="#{@listing.property_type} in #{@listing.address}"%></h1>
 
+<div class="center-block">
+    <img src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/IM20JJF5IY.jpg" alt="Pretty House" height=300px, width=300px>
+</div>
+<p><%="#{@listing.property_type} in #{@listing.address}"%></p>
+<p><%= "Price :#{@listing.price}" %></p>
+<p><%= @listing.description %></p>
+<%= button_tag "Book now!", data: { disable_with: "Please wait..." } %><br>
+
+
+<%@listing.tags.each do |t|%>
+<button type="button" class="btn btn-default">
+<%=link_to "#{t.desc_tag}", tag_path(t.id)%>
+</button>
+<%end%>
 
 <h1>Show specific listing</h1>
 <button type="button" class="btn btn-default">
@@ -10,5 +25,5 @@
 </button>
 
 <button type="button" class="btn btn-default">
-<%= link_to "Delete Listing", listings_path(@listing), :confirm => "Are you sure?", :method => :destroy %>
-
+<%= link_to "Delete Listing", listing_path(@listing),data: {:confirm => "Are you sure?"}, :method => :delete %>
+</button>

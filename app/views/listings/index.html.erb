@@ -8,6 +8,10 @@
 <li><%= x.title %></li>
 <li><%= x.description%></li>
 <li>$<%= x.price%></li>
+<li><%= x.property_type %></li>
+<button type="button" class="btn btn-default">
+<%= link_to "Go to listing", listing_path(x.id) %>
+</button>
 
 <%end%>
 </ul>
