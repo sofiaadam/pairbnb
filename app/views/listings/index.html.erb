@@ -3,7 +3,7 @@
 </button>
 <h1>Here show all listing results</h1>
 <ul>
-<% @listing.each do |x| %>
+<% @searchlistings.each do |x| %>
 <hr>
 <li><%= x.title %></li>
 <li><%= x.description%></li>
@@ -15,3 +15,4 @@
 
 <%end%>
 </ul>
+<%= will_paginate @searchlistings, :page_links => false %>
