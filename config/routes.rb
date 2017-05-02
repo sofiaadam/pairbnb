@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       only: [:create, :edit, :update]
   end
 
+  resources :users do
+    resources :listings
+  end
+  
+
   resources :listings
   resources :tags
   

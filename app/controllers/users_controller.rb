@@ -7,6 +7,7 @@ class UsersController < Clearance::UsersController
 
     def create
     @user = user_from_params
+    @user.role = 'customer'
     if @user.save
         sign_in @user
         redirect_back_or url_after_create
@@ -38,7 +39,7 @@ class UsersController < Clearance::UsersController
   # end
 
 	def user_params
-		params.require(:user).permit(:full_name, :email, :password, :age, :gender)
+		params.require(:user).permit(:full_name, :email, :password, :age, :gender, :avatar)
 	end 
 
 
