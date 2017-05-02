@@ -7,7 +7,7 @@
 # #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# # Seed Users
+# Seed Users
 # user = {}
 # user['password'] = '123456'
 
@@ -15,7 +15,7 @@
 #   20.times do 
 #     user['full_name'] = Faker::Pokemon.name
 #     user['email'] = Faker::Internet.email
-#     user['gender'] = rand(1..2)
+#     user['gender'] = rand(0..2)
 #     user['age'] = rand(18..110)
 #     User.create(user)
 #   end

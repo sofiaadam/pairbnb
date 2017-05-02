@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
             if current_user.customer?
             flash[:notice] = "Sorry. You are not allowed to perform this action."
             return redirect_to root_path, notice: "Sorry. You do not have the permission to verify a property."
-        # @new_tags = @listing.tags.new
+        @new_tags = @listing.tags.new
          end
     end
 
@@ -53,7 +53,7 @@ class ListingsController < ApplicationController
 
     private
     def listing_params
-        params.require(:listing).permit(:title, :description, :property_type, :room_type, :guest, :bedroom, :bathroom, :price, :address, {:tag_ids => [] })
+        params.require(:listing).permit(:title, :description, :property_type, :room_type, :guest, :bedroom, :bathroom, :price, :address, {:tag_ids => [] }, {images: []})
     end
 
     def find_listing

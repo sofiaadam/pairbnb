@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.2'
 #add image gem
 gem 'carrierwave', '~> 1.0'
-
+gem "mini_magick"
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -46,6 +46,8 @@ gem 'omniauth-facebook'
 gem 'will_paginate', '~> 3.1.0'
 #add faker
 gem 'faker'
+#add 
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
