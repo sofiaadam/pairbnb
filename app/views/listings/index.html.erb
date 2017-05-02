@@ -1,6 +1,5 @@
-<button type="button" class="btn btn-default">
-<%= link_to "Back to homepage", root_path %>
-</button>
+<%= button_to "Homepage", root_path, :type => "button", :class => "btn btn-default" , :method => :get %>
+
 <h1>Here show all listing results</h1>
 <ul>
 <% @searchlistings.each do |x| %>
