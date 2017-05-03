@@ -12,8 +12,11 @@ Rails.application.routes.draw do
     resources :listings
   end
   
-
-  resources :listings
+  resources :reservations
+  resources :listings do
+    resources :reservations
+  end
+  
   resources :tags
   
   root 'homes#index'

@@ -4,7 +4,7 @@
 
 <h1><%="#{@listing.property_type} in #{@listing.address}"%></h1>
 
-
+<% if @listing.images.present?%>
 <div class="row">
   <div class="col-md-12">
     <div class="carousel slide" id="myCarousel">
@@ -42,13 +42,18 @@
         </a>
         
       </div>
+      <%else%>
+      <%= image_tag 'default.png' %>
+      <%end%>
 
 
 
 <p><%="#{@listing.property_type} in #{@listing.address}"%></p>
 <p><%= "Price :#{@listing.price}" %></p>
 <p><%= @listing.description %></p>
-<%= button_tag "Book now!", data: { disable_with: "Please wait..." } %><br>
+<%= link_to "Book now!"%><br>
+<%= render "reservations/form" %>
+
 
 
 
