@@ -4,10 +4,13 @@
 
 <h1><%="#{@listing.property_type} in #{@listing.address}"%></h1>
 
+
 <div class="row">
   <div class="col-md-12">
     <div class="carousel slide" id="myCarousel">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
         <% if @listing.images[0].fill.url %>
         <!-- Indicators -->
           <% @listing.images.each do |a| %>
@@ -37,7 +40,10 @@
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Next</span>
         </a>
+        
       </div>
+
+
 
 <p><%="#{@listing.property_type} in #{@listing.address}"%></p>
 <p><%= "Price :#{@listing.price}" %></p>
