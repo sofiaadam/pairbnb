@@ -4,7 +4,7 @@
 <ul>
 <% @searchlistings.each do |x| %>
 <hr>
-<%= image_tag x.images[0].main.url%>
+<%= image_tag x.images[0].main.url if x.images[0]%>
 <li><%= x.title %></li>
 <li><%= x.description%></li>
 <li>$<%= x.price%></li>
