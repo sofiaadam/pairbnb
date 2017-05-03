@@ -1,0 +1,15 @@
+require 'carrierwave/orm/activerecord'
+#we want to be connected to fog/will connect with aws
+CarrierWave.configure do |config|
+  config.fog_credentials = {
+    :provider => 'AWS',
+    :aws_access_key_id => ENV['AWS_KEY'],
+    :aws_secret_access_key => ENV['AWS_SECRET_KEY'],
+    :region => 'ap-southeast-1'
+  }
+  config.fog_directory  = ENV['S3_BUCKET_NAME']
+end 
+
+
+
+

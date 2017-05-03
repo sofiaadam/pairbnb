@@ -4,6 +4,7 @@
 <ul>
 <% @searchlistings.each do |x| %>
 <hr>
+<%= image_tag x.images[0].main.url%>
 <li><%= x.title %></li>
 <li><%= x.description%></li>
 <li>$<%= x.price%></li>
@@ -15,3 +16,6 @@
 <%end%>
 </ul>
 <%= will_paginate @searchlistings, :page_links => false %>
+
+
+

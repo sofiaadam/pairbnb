@@ -10,9 +10,7 @@
 
   <body>
 
-
-  
-  <nav class="navbar">
+    <nav class="navbar">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -35,19 +33,27 @@
       
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         
-        <ul class="nav navbar-nav navbar-right">
-          <% if signed_in? -%>
-              <li><%=link_to "my listing", user_path(current_user.id) %></li>
+
+          <ul class="nav navbar-nav navbar-right">
+          
+            <% if current_user %>
               <li><%=link_to "create a listing", new_user_listing_path(current_user.id) %></li>
-              <li><%= link_to t(".sign_out"), sign_out_path, method: :delete %></li>
-              <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><%= current_user.full_name %></a></p>
-              
-
-          <% else -%>
-              <%= link_to t(".sign_in"), sign_in_path %>
-              <%= link_to t(".sign_up"), sign_up_path %>
-
-          <% end -%>
+            <li class="dropdown">
+            
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.full_name %><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= image_tag current_user.avatar%></li>
+                <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              	<li><%= link_to "Your Listings", user_listings_path(current_user.id)%></li>
+								<li><%= link_to "Logout", sign_out_path, method: :delete  %></li>
+              </ul>
+            </li>
+						<% else %>
+						<li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+						<li><%= link_to "Login", sign_in_path %></li>
+						<% end %>
+          </ul>
 
 
 
@@ -63,6 +69,13 @@
 
 
 
+          
+        
+
+  
+  
+
+
 
  <%#<form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -72,7 +85,7 @@
       </form>%>
      
 
-  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+  
       
     <div class='container'>
 
