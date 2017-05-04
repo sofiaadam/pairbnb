@@ -1,9 +1,13 @@
 class User < ApplicationRecord
   include Clearance::User
   require 'carrierwave/orm/activerecord'
+  
   has_many :authentications, :dependent => :destroy
-  has_many :listings
+  has_many :listings, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+  
   mount_uploader :avatar, AvatarUploader
+  
   enum role: [:customer, :moderator, :superadmin]
   enum gender: [:undefined, :male, :female]
 

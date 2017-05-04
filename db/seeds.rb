@@ -17,6 +17,7 @@
 #     user['email'] = Faker::Internet.email
 #     user['gender'] = rand(0..2)
 #     user['age'] = rand(18..110)
+#     user['avatar'] = Faker::Avatar.image(Faker::Lorem.word, "100x100")
 #     User.create(user)
 #   end
 # end 
@@ -37,7 +38,7 @@
 #     listing['price'] = rand(80..500)
 #     listing['address'] = Faker::StarWars.planet
 #     listing['tag_ids'] = rand(1..6)
-
+    
     
 #     listing['user_id'] = uids.sample
     
