@@ -12,6 +12,8 @@ gem 'rails', '~> 5.0.2'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem "fog"
+#add braintree payment system
+gem 'braintree'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

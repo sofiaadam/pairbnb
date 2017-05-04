@@ -14,8 +14,9 @@ class ReservationsController < ApplicationController
     
     #all the listing information is stored with the booking, which in this case is the listing id in booking
         @reservation.listing = @listing
+
         if @reservation.save
-            redirect_to current_user
+            redirect_to listing_reservation_path(@listing,@reservation)
             else
             # @errors = @reservation.errors.full_messages
             flash[:notice] = "Selected date not available"
