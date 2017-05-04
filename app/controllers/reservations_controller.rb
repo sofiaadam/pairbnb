@@ -17,8 +17,9 @@ class ReservationsController < ApplicationController
         if @reservation.save
             redirect_to current_user
             else
-            @errors = reservation.errors.full_messages
-            render "listings/show"
+            # @errors = @reservation.errors.full_messages
+            flash[:notice] = "Selected date not available"
+            redirect_to listings_path
         end
     end
 

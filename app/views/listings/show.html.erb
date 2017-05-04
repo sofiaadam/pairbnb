@@ -1,7 +1,11 @@
 <button type="button" class="btn btn-default">
 <%= link_to "Back to all listings", listings_path %>
 </button>
+<div class='row'>
+<div class='col-sm-3'>
+</div>
 
+<div class='col-sm-6 text-center'>
 <h1><%="#{@listing.property_type} in #{@listing.address}"%></h1>
 
 <% if @listing.images.present?%>
@@ -51,7 +55,7 @@
 <p><%="#{@listing.property_type} in #{@listing.address}"%></p>
 <p><%= "Price :#{@listing.price}" %></p>
 <p><%= @listing.description %></p>
-<%= link_to "Book now!"%><br>
+
 <%= render "reservations/form" %>
 
 
@@ -64,6 +68,7 @@
 <button type="button" class="btn btn-default">
 <%=link_to "#{t.desc_tag}", tag_path(t.id)%>
 </button>
+
 <%end%>
 
 <h1>Show specific listing</h1>
@@ -74,3 +79,5 @@
 <button type="button" class="btn btn-default">
 <%= link_to "Delete Listing", listing_path(@listing),data: {:confirm => "Are you sure?"}, :method => :delete %>
 </button>
+</div>
+<div class='col-sm-3'></div>
