@@ -4,6 +4,7 @@ class Reservation < ApplicationRecord
 
   #validates if booking is overlapping with previous bookings
   enum status: [:pending, :paid]
+  validate :available?
   validate :check_overlapping_dates
   #validates if guest staying does not exceed the max allowed guest in listing
 
@@ -20,6 +21,10 @@ class Reservation < ApplicationRecord
     (x.start_date - y.end_date) * (y.start_date - x.end_date) > 0
   end
 
+  def available?
+    self.errors.add(:start_date, "You can only make reservations from #{Date.today} onwards.") 
+  end
+  
   
 
   def total_price
