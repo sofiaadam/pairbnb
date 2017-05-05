@@ -16,6 +16,7 @@ class ReservationsController < ApplicationController
         @reservation.listing = @listing
 
         if @reservation.save
+            ReservationMailer.booking_email(current_user, @reservation.listing.user, @reservation.id).deliver_now
             redirect_to listing_reservation_path(@listing,@reservation)
             else
             # @errors = @reservation.errors.full_messages
@@ -43,3 +44,5 @@ class ReservationsController < ApplicationController
         params.require(:reservation).permit(:start_date, :end_date)
     end
 end
+
+
