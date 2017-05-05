@@ -2,8 +2,7 @@ class ReservationJob < ApplicationJob
   queue_as :default
 
   def perform(x, y, z)
-    byebug
-    ReservationMailer.booking_email(x, y, "#{z}").deliver_later
+    ReservationMailer.booking_email(x, y, "#{z}").deliver_now
     # Do something later
   end
 end
