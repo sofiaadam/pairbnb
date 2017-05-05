@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   
   resources :reservations
+
   resources :listings do
     resources :reservations
   end
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+  get "/reservations/:rid/payment/new" => "payment#new", as: "payment_new"
+  post '/reservations/:rid/payment/checkout' => "payment#checkout", as: "payment_checkout"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
 end

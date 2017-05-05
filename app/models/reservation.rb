@@ -3,9 +3,9 @@ class Reservation < ApplicationRecord
     belongs_to :listing
 
   #validates if booking is overlapping with previous bookings
+  enum status: [:pending, :paid]
   validate :check_overlapping_dates
   #validates if guest staying does not exceed the max allowed guest in listing
-
 
   def check_overlapping_dates
     #compare this new booking with existing bookings

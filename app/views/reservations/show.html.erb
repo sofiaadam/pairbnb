@@ -1,0 +1,7 @@
+
+<%= @reservation.listing.title %> <br>
+<%= @reservation.start_date %> <br>
+<%= @reservation.end_date %> <br>
+<%= @reservation.total_price%>
+<br>
+<%= link_to "Make Payment", payment_new_path(@reservation) %>
