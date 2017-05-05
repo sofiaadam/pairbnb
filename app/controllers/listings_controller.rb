@@ -11,11 +11,11 @@ class ListingsController < ApplicationController
     #render listing form
     def new
         @listing = Listing.new
-            if current_user.customer?
-            flash[:notice] = "Sorry. You are not allowed to perform this action."
-            return redirect_to root_path, notice: "Sorry. You do not have the permission to verify a property."
+            # if current_user.customer?
+            # flash[:notice] = "Sorry. You are not allowed to perform this action."
+            # return redirect_to root_path, notice: "Sorry. You do not have the permission to verify a property."
         @new_tags = @listing.tags.new
-         end
+        #  end
     end
 
     def create
