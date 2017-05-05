@@ -49,7 +49,9 @@ gem 'omniauth-facebook'
 gem 'will_paginate', '~> 3.1.0'
 #add faker
 gem 'faker'
-#add 
+#add sidekiq
+gem 'sidekiq'
+
 
 
 # Use Capistrano for deployment

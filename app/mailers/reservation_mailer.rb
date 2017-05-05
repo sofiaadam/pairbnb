@@ -7,7 +7,7 @@ class ReservationMailer < ApplicationMailer
         @host = host
         @url = "/reservation/#{reservation_id}"
         
-        mail(to: @host.email, subject: 'Someone booked a reservation')
+        mail(to: @host, subject: 'Someone booked a reservation')
     end
     
 

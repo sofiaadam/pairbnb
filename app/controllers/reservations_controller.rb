@@ -16,7 +16,8 @@ class ReservationsController < ApplicationController
         @reservation.listing = @listing
 
         if @reservation.save
-            ReservationMailer.booking_email(current_user, @reservation.listing.user, @reservation.id).deliver_now
+            ReservationJob.perform_later(current_user.full_name, @reservation.listing.user.email, @reservation.id)
+            # ReservationMailer.booking_email(current_user, @reservation.listing.user, @reservation.id).deliver_later
             redirect_to listing_reservation_path(@listing,@reservation)
             else
             # @errors = @reservation.errors.full_messages
