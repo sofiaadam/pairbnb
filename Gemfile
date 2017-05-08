@@ -51,6 +51,9 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'faker'
 #add sidekiq
 gem 'sidekiq'
+#add rails_12factor
+gem 'rails_12factor', group: :production
+
 
 
 
