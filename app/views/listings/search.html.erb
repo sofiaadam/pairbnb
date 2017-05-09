@@ -1,0 +1,9 @@
+
+<% @num_bathroom.each do |x|%>
+<%= link_to x.title, listing_path(x.id) %><br>
+<%end%>
+
+<% @price_range.each do |x| %>
+<%= link_to x.title, listing_path(x.id) %><br>
+<%end%>
+
