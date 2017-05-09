@@ -52,6 +52,16 @@
 </div>
 <!-- /.carousel -->%>
 
+<%= form_tag '/search', method: 'get', remote: true do %>
+<%= text_field_tag :bathroom %>
+<%= submit_tag ('Search') %>
+<%end%>
+<%= form_tag '/search', method: 'get', remote: true do %>
+
+<%= text_field_tag :min %>
+<%= text_field_tag :max %>
+<%= submit_tag ('Search') %>
+<%end%>
 
 
 

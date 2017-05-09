@@ -6,7 +6,19 @@ class ListingsController < ApplicationController
         @listing = Listing.all.order("created_at DESC")
         # @tag = Tag.new
         @searchlistings = Listing.all.order("created_at DESC").paginate(page: params[:page], per_page: 5)
+        
+        # @form = SearchForm.new(params.require ( :search_form))
+        # @searchform
     end
+
+    # def index
+	#   if params[:title]
+	#     @searchlistings = Listing.where(title: params[:title]).paginate(page: params[:page], per_page: 10)
+	#   else
+	#     @searchlistings = Listing.all.paginate(page: params[:page], per_page: 10)
+	#   end
+	# end
+
 
     #render listing form
     def new
@@ -30,6 +42,18 @@ class ListingsController < ApplicationController
             render 'new'
         end
     end
+
+    # def search
+    #    @num_bathroom = Listing.bathroom(params[:bathroom])
+    #    @listings = Listing.min_max_price(params[:min], params[:max])
+    #    respond_to do |format|
+    #        format.js
+    # end
+    
+
+    # def find 
+    #     findsearch = SearchForm.new
+    # end
 
     def show
         @reservation = Reservation.new
