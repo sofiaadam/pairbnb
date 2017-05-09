@@ -43,12 +43,12 @@ class ListingsController < ApplicationController
         end
     end
 
-    # def search
-    #    @num_bathroom = Listing.bathroom(params[:bathroom])
-    #    @listings = Listing.min_max_price(params[:min], params[:max])
+    def search
+       @num_bathroom = Listing.bathroom(params[:bathroom])
+       @price_range = Listing.min_max_price(params[:min], params[:max])
     #    respond_to do |format|
     #        format.js
-    # end
+    end
     
 
     # def find 

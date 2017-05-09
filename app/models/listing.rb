@@ -1,4 +1,5 @@
 class Listing < ApplicationRecord
+    include PgSearch
     mount_uploaders :images, AvatarsUploader
     
     belongs_to :user
